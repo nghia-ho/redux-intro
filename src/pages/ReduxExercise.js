@@ -146,14 +146,14 @@ const ProductOne = (props) => {
             <Button
               variant="success"
               sx={{ width: "5rem" }}
-              onClick={() => dispatch(addProduct())}
+              onClick={addProduct}
             >
               Add
             </Button>
             <Button
               variant="error"
               sx={{ width: "5rem" }}
-              onClick={() => dispatch(removeProduct())}
+              onClick={removeProduct}
             >
               Remove
             </Button>
@@ -170,7 +170,11 @@ const ProductTwo = (props) => {
   // You should see the price is updated
 
   const product = useSelector((state) => state.product[1]);
+
+  // Step 9
+  // Repeat step 7 and 8 for this component
   const dispatch = useDispatch();
+
   const addProduct = () => {
     dispatch(addToCart(product));
   };
@@ -178,9 +182,6 @@ const ProductTwo = (props) => {
   const removeProduct = () => {
     dispatch(removeCart(product));
   };
-  // Step 9
-  // Repeat step 7 and 8 for this component
-
   return (
     <WrapperBox>
       <Typography
@@ -206,14 +207,14 @@ const ProductTwo = (props) => {
             <Button
               variant="success"
               sx={{ width: "5rem" }}
-              onClick={() => dispatch(addProduct())}
+              onClick={addProduct}
             >
               Add
             </Button>
             <Button
               variant="error"
               sx={{ width: "5rem" }}
-              onClick={() => dispatch(removeProduct())}
+              onClick={removeProduct}
             >
               Remove
             </Button>
